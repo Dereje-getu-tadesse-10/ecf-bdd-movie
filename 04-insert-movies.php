@@ -13,11 +13,15 @@ $file = fopen('./film.csv','r');
 if ($file !==FALSE) {
     while(($row = fgetcsv($file, null, ";", "'", "\n"))!== FALSE){
 
-        $req_get_id_year->bindValue(':year_movie', $row[1], PDO::PARAM_STR);
-        $req_get_id_year->execute();
-        $id_year = $req_get_id_year->fetch(PDO::FETCH_ASSOC);
-        $req_movies->bindValue(':title', $row[0], PDO::PARAM_STR);
-        $req_movies->bindValue(':release', $id_year['id'], PDO::PARAM_INT);
-        $req_movies->execute();
-    }
+    $req_get_id_year->bindValue(':year_movie', $row[1], PDO::PARAM_STR);
+
+    $req_get_id_year->execute();
+
+    $id_year = $req_get_id_year->fetch(PDO::FETCH_ASSOC);
+
+    $req_movies->bindValue(':title', $row[0], PDO::PARAM_STR);
+
+    $req_movies->bindValue(':release', $id_year['id'], PDO::PARAM_INT);
+
+    $req_movies->execute();
 }
