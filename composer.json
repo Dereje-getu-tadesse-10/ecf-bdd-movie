@@ -1,0 +1,15 @@
+{
+    "name": "dereje/ecf-movie",
+    "autoload": {
+        "psr-4": {
+            "Dereje\\EcfMovie\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dereje-getu-tadesse-10",
+            "email": "getutadessedereje@icloud.com"
+        }
+    ],
+    "require": {}
+}
