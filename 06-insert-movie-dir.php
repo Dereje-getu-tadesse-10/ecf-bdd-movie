@@ -25,8 +25,6 @@ if ($file !==FALSE) {
 	        $req_get_id_dir->execute();
 	        $id_dir = $req_get_id_dir->fetch(PDO::FETCH_ASSOC);
 
-			echo "test";
-
 	        $req_movie_dir->bindValue(':id_dir', $id_dir["id"], PDO::PARAM_INT);
 	        $req_movie_dir->bindValue(':id_movies', $id_movie["id"], PDO::PARAM_INT);
 	        $req_movie_dir->execute();

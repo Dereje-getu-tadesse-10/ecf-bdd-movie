@@ -10,6 +10,7 @@ $file = fopen('./film.csv','r');
 if ($file !==FALSE) {
     while(($row = fgetcsv($file, null, ";", "'", "\n"))!== FALSE){
         $req_year->bindValue(':release_year', $row[1], PDO::PARAM_INT);
+        
         $req_year->execute();
     }
 }

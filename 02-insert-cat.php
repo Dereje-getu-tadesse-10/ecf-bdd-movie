@@ -11,10 +11,11 @@ if ($file !==FALSE) {
     while(($row = fgetcsv($file, null, ";", "'", "\n"))!== FALSE){
         $one_cat = explode (",", $row[3]);
         for ($i=0; $i < count($one_cat) ; $i++) {
+
+            
             $req_cat->bindValue(':category', $one_cat[$i], PDO::PARAM_STR);
             $req_cat->execute();
-       
+
         }
     }
 }
- // $req_cat->bindValue(':categories', $one_cat[$i], PDO::PARAM_STR);
